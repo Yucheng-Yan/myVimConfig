@@ -3,7 +3,7 @@
 # check if vim is installed
 if ! command -v vim &> /dev/null; then
     echo "installing vim..."
-    # 检查系统的包管理器
+    # choose proper package manager
     if [ -x "$(command -v apt)" ]; then
         sudo apt update && sudo apt install -y vim
     elif [ -x "$(command -v yum)" ]; then
