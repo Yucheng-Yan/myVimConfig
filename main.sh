@@ -41,7 +41,33 @@ git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/tpope/vim-sensible.git
 git clone https://github.com/preservim/nerdtree.git
 git clone https://github.com/wlangstroth/vim-racket.git
+git clone https://github.com/shmup/vim-sql-syntax.git
+git clone https://github.com/tpope/vim-fugitive.git
+
+echo "Successfully installed the following plugins:"
+ls
+
+# check how many plugins are installed
+intended_count=9
+plugin_count=$(ls -l | grep -c ^d)
+if [ $plugin_count -eq $intended_count ]; then
+	echo "All plugins are installed successfully"
+else
+	missing_count=$((intended_count - plugin_count))
+	echo "Failed to install $missing_count plugins"
+fi
+
+cd -
 
 # update vimrc
 echo "updating vimrc..."
 cp vimrc ~/.vimrc
+
+if [ -f ~/.vimrc ]; then
+	echo "vimrc is updated successfully"
+else
+	echo "failed to update vimrc"
+	exit 1
+fi
+
+echo "All set! Please check the list above to see what's missing."
