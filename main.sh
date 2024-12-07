@@ -41,3 +41,7 @@ git clone https://github.com/pangloss/vim-javascript.git
 git clone https://github.com/tpope/vim-sensible.git
 git clone https://github.com/preservim/nerdtree.git
 git clone https://github.com/wlangstroth/vim-racket.git
+
+# update vimrc
+echo "updating vimrc..."
+cp vimrc ~/.vimrc
