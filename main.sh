@@ -12,6 +12,8 @@ if ! command -v vim &> /dev/null; then
         sudo dnf install -y vim
     elif [ -x "$(command -v pacman)" ]; then
         sudo pacman -Syu --noconfirm vim
+	elif [ -x "$(command -v brew)" ]; then
+		brew install vim
     else
         echo "no common package manager is detected on your system, please install vim manually."
         exit 1
