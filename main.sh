@@ -58,7 +58,6 @@ else
 	missing_count=$((intended_count - plugin_count))
 	echo "Failed to install $missing_count plugins"
 fi
-
 cd -
 
 # update vimrc
