@@ -6,14 +6,19 @@ if ! command -v vim &> /dev/null; then
     # choose proper package manager
     if [ -x "$(command -v apt)" ]; then
         sudo apt update && sudo apt install -y vim
+        sudo apt-get update && sudo apt-get install -y exuberant-ctags
     elif [ -x "$(command -v yum)" ]; then
         sudo yum install -y vim
+        sudo yum update && sudo yum install -y ctags
     elif [ -x "$(command -v dnf)" ]; then
         sudo dnf install -y vim
     elif [ -x "$(command -v pacman)" ]; then
         sudo pacman -Syu --noconfirm vim
 	elif [ -x "$(command -v brew)" ]; then
 		brew install vim
+        brew install ctags
+        alias ctags="`brew --prefix`/bin/ctags"
+        alias ctags >> ~/.bash_profile
     else
         echo "no common package manager is detected on your system, please install vim manually."
         exit 1
