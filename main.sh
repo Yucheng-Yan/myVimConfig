@@ -41,7 +41,6 @@ fi
 # install vim plugins
 echo "installing vim plugins..."
 cd ~/.vim/bundle
-git clone https://github.com/dense-analysis/ale.git
 git clone https://github.com/jlanzarotta/bufexplorer.git
 git clone https://github.com/preservim/vim-indent-guides.git
 git clone https://github.com/pangloss/vim-javascript.git
